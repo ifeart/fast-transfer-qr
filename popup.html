@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Transfer</title>
+  <link rel="stylesheet" href="popup.css">
+<!--<script src="qrcode.min.js"></script>-->
+</head>
+<body class="no-copy">
+  <h1 class="heading">Fast Transfer</h1>
+  <form id="qrGenForm" class="qrGenForm">
+    <input type="text" 
+      id="input-text" 
+      class="input-text"
+      name="input-text" 
+      placeholder="Вставьте текст">
+    <input type="submit"
+      class="btn"
+      id="btn-input" 
+      value="Создать">
+  </form>
+  <br><!--
+  <div class="div-qr-img" id="div-qr-img">
+      <img id="qr-default-img" width="120px" height="120px"
+        src="/img/qr-default.png"
+        style="display: block;">
+  </div>-->
+  <div class="div-qr-img" id="div-qr-img-new">
+    <img id="qr-default-img-new" width="120px" height="120px"
+      src="/img/qr-default.png"
+      style="display: block;">
+  </div>
+
+  <br>
+  <form id="form-url" class="form-url">
+    <input id="input-url"
+      class="input-text" 
+      type="url"
+      placeholder="Вставьте ссылку">
+    <input id="btn-url"
+      class="btn"
+      type="submit" 
+      value="Сократить">
+  </form>
+  <div 
+    class="div-short-url dp-n" 
+    id="div-short-url">
+    <img 
+      class="icon-short-url va-mdl" 
+      width="30px" 
+      src="icons/link-icon.svg">
+    <span 
+      class="short-url va-mdl" 
+      id="short-url">
+    </span>
+  </div>
+  <p class="short-url div-short-url"></p>
+  <div class="footer-info">
+    <a class="github-link" 
+      href="https://github.com/ifeart" 
+      title="my github" 
+      target="_blank">
+      <img src="/icons/github-mark.svg" 
+        alt="ifeart-github-logo" 
+        width="35px">
+      <span class="github-text">ifeart</span>
+    </a>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Fast Transfer",
+    "version": "1.2",
+    "description": "Generates a QR code and a short link",
+    "permissions": ["contextMenus", "activeTab", "clipboardRead"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon-logo-qr-16.png",
+        "48": "icons/icon-logo-qr-48.png",
+        "128": "icons/icon-logo-qr-96.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon-logo-qr-16.png",
+      "48": "icons/icon-logo-qr-48.png",
+      "128": "icons/icon-logo-qr-96.png"
+    },
+    "commands": {
+      "generate_qr": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+Q"
+        },
+        "description": "Generate QR code from selected text"
+      }
+    }
+}
