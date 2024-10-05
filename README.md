@@ -18,3 +18,12 @@ A browser extension for quickly creating a QR code and short link
 5. Click the “Download the unpacked extension” button
 6. Select the location of the extension folder and enter this folder, click “Select folder”
 7. For convenience, pin the extension and add it for use in incognito mode, the latter is possible in the settings of the extension itself in the “Manage extensions”
+
+###v1.3
+- Расширение теперь запускается сочетанием клавиш ctrl+shift+q
+- Удален файловый мусор старой библиотеки и лишний код
+- Небольшие графические изменения
+
+###v1.2
+- Библиотека генерации QR-кода замененена на более стабильное API
+- Добавлена ссылка на GitHub)
