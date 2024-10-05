@@ -1,41 +1,21 @@
 let qrGenForm = document.getElementById('qrGenForm');
 let qrInputText = document.getElementById('input-text');
-let qrCode;
-
-function generateQrCode(contentForQr){
-    return new QRCode('div-qr-img', {
-        text: contentForQr,
-        width: 120,
-        height: 120,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H,
-    });
-}
+document.getElementById('input-text').focus();
 
 qrGenForm.addEventListener('submit', (event) => {
     event.preventDefault();
     let contentForQr = qrInputText.value;
-    /*
-    if (qrCode == null) {
-        document.getElementById("div-qr-img").removeChild(
-            document.getElementById("qr-default-img")
-        );
-        qrCode = generateQrCode(contentForQr);
-    } else {
-        qrCode.makeCode(contentForQr);
-    }
-    */
     if (contentForQr.length > 0) {
         let newDivQrImg = document.getElementById("div-qr-img-new");
-        console.log(newDivQrImg);
         newDivQrImg.removeChild(document.getElementById('qr-default-img-new'));
         let newQrImg = document.createElement('img');
         newQrImg.id = "qr-default-img-new";
-        newQrImg.width = 120;
-        newQrImg.height = 120;
+        newQrImg.width = 170;
+        newQrImg.height = 170;
         newQrImg.style.display = "block";
-        newQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=' + contentForQr;
+        newQrImg.classList.add('img-qr');
+        newQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=' + contentForQr;
+        console.log(contentForQr);
         newDivQrImg.appendChild(newQrImg);
     }
 });
@@ -45,10 +25,8 @@ let urlForm = document.getElementById("form-url");
 let shortUrlText = document.getElementById("short-url");
 let divShortUrl = document.getElementById('div-short-url');
 
-console.log(shortUrlText);
 urlForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(urlForm.value);
     let urlInput = document.getElementById("input-url").value;
 
     if (urlInput) {

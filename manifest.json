@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Fast Transfer",
-    "version": "1.2",
+    "version": "1.3",
     "description": "Generates a QR code and a short link",
     "permissions": ["contextMenus", "activeTab", "clipboardRead"],
     "background": {
@@ -21,7 +21,7 @@
       "128": "icons/icon-logo-qr-96.png"
     },
     "commands": {
-      "generate_qr": {
+      "open-popup": {
         "suggested_key": {
           "default": "Ctrl+Shift+Q"
         },
