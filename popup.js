@@ -2,6 +2,17 @@ let qrGenForm = document.getElementById('qrGenForm');
 let qrInputText = document.getElementById('input-text');
 document.getElementById('input-text').focus();
 
+document.addEventListener('DOMContentLoaded', async () => {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        function: () => window.getSelection().toString()
+    }, (results) => {
+        qrInputText.value = results[0].result;
+    });
+});
+
 qrGenForm.addEventListener('submit', (event) => {
     event.preventDefault();
     let contentForQr = qrInputText.value;
